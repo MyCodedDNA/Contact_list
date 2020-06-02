@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>
+            Contact List
+        </title>
+        <link rel="stylesheet" href="./css/contacts.css">
+    </head>
+    <body>
+        <header>
+            <i class="fas fa-address-book fa-3x "></i><h1>My Contact List</h1>
+    </header>
+
+    <div id="contacts">
+        <p>Available contacts</p>
+        <span class="contacts">
+            <p class="p1">NAME</p>
+            <p class="p2">Phone Number</p> 
+            <a  class="p3 fas fa-times fa-2x" style="opacity: 0;"></a>
+        </span>
+        <% for( i of contact_list) {%>
+        <span class="contacts">
+            <p class="p1" ><%= i.name%></p>
+            <p class="p2"><%= i.phone%></p> 
+            <a href="/delete?id=<%= i._id%>" class="p3 fas fa-times fa-2x"></a>
+        </span>
+        <% }%>
+
+        
+        <p>add new contact</p>
+        <span class="form">
+            <form action="./action" method="post">
+                <input type="text" name="name" class="details " placeholder="Name">
+                <input type="number" name="phone" class="details " placeholder="Phone Number">
+                <input type="submit" value="Add" class=" p3">
+            </form>
+        </span>
+    </div>
+    
+    </body>
+
+    <script src="https://kit.fontawesome.com/8397dc2c85.js" crossorigin="anonymous"></script>
+</html>
